@@ -8,8 +8,8 @@
     "templateId": "javascript-node"
   },
   "input": "./INPUT_SCHEMA.json",
-  "dockerfile": "./Dockerfile",
-  "readme": "./README.md",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
   "categories": [
     "BUSINESS",
     "JOBS",
