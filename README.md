@@ -72,11 +72,11 @@ Postleitzahl-Präfix zum Filtern.
 
 ### Optionale Parameter
 
-#### `platforms` (Array)
+#### `platforms` (String)
 Welche Plattformen durchsucht werden sollen.
 
-**Optionen:** `["linkedin", "xing", "both"]`
-**Default:** `["both"]`
+**Optionen:** `"linkedin"`, `"xing"`, `"both"`
+**Default:** `"both"`
 
 #### `maxResultsPerPlatform` (Integer)
 Maximale Anzahl der Profile pro Jobtitel und Plattform.
@@ -126,7 +126,7 @@ Apify Proxy-Konfiguration.
   ],
   "location": "Köln",
   "postalCodePrefix": "5",
-  "platforms": ["both"],
+  "platforms": "both",
   "maxResultsPerPlatform": 50,
   "enableEmailEnrichment": true,
   "enablePhoneEnrichment": true,
@@ -230,7 +230,7 @@ Xing ist besonders wertvoll für B2B-Recherche im DACH-Raum:
 ### Empfehlung
 
 Für beste Ergebnisse im deutschen Markt:
-- Verwenden Sie `"platforms": ["both"]` um beide Plattformen zu nutzen
+- Verwenden Sie `"platforms": "both"` um beide Plattformen zu nutzen
 - Xing liefert oft direktere Kontaktdaten (E-Mail, Telefon)
 - LinkedIn bietet größere Reichweite, besonders bei internationalen Unternehmen
 
@@ -353,7 +353,7 @@ Für maximale Datenqualität:
 **Nur Xing** (schneller, mehr Kontaktdaten):
 ```json
 {
-  "platforms": ["xing"],
+  "platforms": "xing",
   "maxResultsPerPlatform": 100
 }
 ```
@@ -361,7 +361,7 @@ Für maximale Datenqualität:
 **Beide Plattformen** (maximale Abdeckung):
 ```json
 {
-  "platforms": ["both"],
+  "platforms": "both",
   "maxResultsPerPlatform": 50
 }
 ```

@@ -31,13 +31,12 @@
         },
         "platforms": {
             "title": "Platforms to Search",
-            "type": "array",
+            "type": "string",
             "description": "Welche Plattformen durchsucht werden sollen",
             "editor": "select",
-            "default": ["both"],
-            "prefill": ["both"],
-            "enum": ["linkedin", "xing", "both"],
-            "uniqueItems": true
+            "default": "both",
+            "prefill": "both",
+            "enum": ["linkedin", "xing", "both"]
         },
         "maxResultsPerPlatform": {
             "title": "Max Results Per Platform",

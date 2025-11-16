@@ -69,7 +69,7 @@ Actor.main(async () => {
         jobTitles,
         location,
         postalCodePrefix,
-        platforms = ['both'],
+        platforms = 'both',
         maxResultsPerPlatform = 50,
         enableEmailEnrichment = true,
         enablePhoneEnrichment = true,
@@ -82,7 +82,7 @@ Actor.main(async () => {
     console.log(`  Job Titles: ${jobTitles.join(', ')}`);
     console.log(`  Location: ${location}`);
     console.log(`  Postal Code Prefix: ${postalCodePrefix}`);
-    console.log(`  Platforms: ${platforms.join(', ')}`);
+    console.log(`  Platforms: ${platforms}`);
     console.log(`  Max Results per Platform: ${maxResultsPerPlatform}`);
     console.log(`  Email Enrichment: ${enableEmailEnrichment ? 'Yes' : 'No'}`);
     console.log(`  Phone Enrichment: ${enablePhoneEnrichment ? 'Yes' : 'No'}`);
@@ -110,8 +110,8 @@ Actor.main(async () => {
     const allProfiles = [];
 
     // Determine which platforms to use
-    const useLinkedIn = platforms.includes('linkedin') || platforms.includes('both');
-    const useXing = platforms.includes('xing') || platforms.includes('both');
+    const useLinkedIn = platforms === 'linkedin' || platforms === 'both';
+    const useXing = platforms === 'xing' || platforms === 'both';
 
     // For each job title
     for (const jobTitle of jobTitles) {
