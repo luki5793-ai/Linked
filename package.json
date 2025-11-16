@@ -1,0 +1,33 @@
+{
+  "name": "linkedin-xing-profile-scraper",
+  "version": "1.0.0",
+  "description": "LinkedIn & Xing Profile Search Scraper + EMAIL (No Cookies Required) - Scrapes professional profiles from LinkedIn and Xing based on job titles, location, and postal code filtering",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "author": "Your Name",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "apify": "^3.1.0",
+    "crawlee": "^3.5.0",
+    "playwright": "^1.40.0",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.0",
+    "email-validator": "^2.0.4",
+    "node-html-parser": "^6.1.0"
+  },
+  "keywords": [
+    "apify",
+    "scraper",
+    "linkedin",
+    "xing",
+    "recruitment",
+    "lead-generation",
+    "b2b",
+    "email-enrichment",
+    "contact-finder"
+  ]
+}

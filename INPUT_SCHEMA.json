@@ -1,0 +1,91 @@
+{
+    "title": "LinkedIn & Xing Profile Search Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "jobTitles": {
+            "title": "Job Titles",
+            "type": "array",
+            "description": "Liste der gesuchten Jobtitel (z.B. 'IT Manager', 'HR Director', 'CTO')",
+            "editor": "stringList",
+            "prefill": ["IT Manager", "Personalleiter", "DevOps Engineer"],
+            "minItems": 1
+        },
+        "location": {
+            "title": "Location",
+            "type": "string",
+            "description": "Stadt oder Region für die Suche (z.B. 'Köln', 'München', 'Berlin')",
+            "editor": "textfield",
+            "example": "Köln",
+            "minLength": 1
+        },
+        "postalCodePrefix": {
+            "title": "Postal Code Prefix",
+            "type": "string",
+            "description": "Postleitzahl-Präfix zum Filtern (z.B. '5' für 50xxx-59xxx, '50' für 50xxx, '51' für 51xxx)",
+            "editor": "textfield",
+            "example": "5",
+            "pattern": "^[0-9]+$",
+            "minLength": 1,
+            "maxLength": 5
+        },
+        "platforms": {
+            "title": "Platforms to Search",
+            "type": "array",
+            "description": "Welche Plattformen durchsucht werden sollen",
+            "editor": "select",
+            "default": ["both"],
+            "prefill": ["both"],
+            "enum": ["linkedin", "xing", "both"],
+            "uniqueItems": true
+        },
+        "maxResultsPerPlatform": {
+            "title": "Max Results Per Platform",
+            "type": "integer",
+            "description": "Maximale Anzahl der zu extrahierenden Profile pro Jobtitel und Plattform",
+            "editor": "number",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 500
+        },
+        "enableEmailEnrichment": {
+            "title": "Enable Email Enrichment",
+            "type": "boolean",
+            "description": "E-Mail-Adressen automatisch recherchieren und extrahieren",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "enablePhoneEnrichment": {
+            "title": "Enable Phone Enrichment",
+            "type": "boolean",
+            "description": "Telefonnummern recherchieren (über Unternehmenswebsites, etc.)",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "enableCompanyEnrichment": {
+            "title": "Enable Company Enrichment",
+            "type": "boolean",
+            "description": "Zusätzliche Firmeninformationen sammeln (Website, Größe, Branche)",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "deduplicateProfiles": {
+            "title": "Deduplicate Profiles",
+            "type": "boolean",
+            "description": "Duplikate über beide Plattformen hinweg entfernen (gleicher Name + Firma)",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "type": "object",
+            "description": "Proxy-Konfiguration für das Scraping",
+            "prefill": {
+                "useApifyProxy": true,
+                "apifyProxyGroups": ["RESIDENTIAL"]
+            },
+            "editor": "proxy"
+        }
+    },
+    "required": ["jobTitles", "location", "postalCodePrefix"]
+}

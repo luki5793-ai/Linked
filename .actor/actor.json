@@ -1,0 +1,74 @@
+{
+  "actorSpecification": 1,
+  "name": "linkedin-xing-profile-scraper",
+  "title": "LinkedIn & Xing Profile Search Scraper + EMAIL",
+  "description": "Scrapes LinkedIn and Xing profiles based on job title, location, and postal code. Includes automatic email and phone enrichment. Optimized for German B2B market.",
+  "version": "1.0.0",
+  "meta": {
+    "templateId": "javascript-node"
+  },
+  "input": "./INPUT_SCHEMA.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "categories": [
+    "BUSINESS",
+    "JOBS",
+    "LEAD_GENERATION"
+  ],
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "LinkedIn & Xing Profiles",
+      "description": "Scraped profiles with contact information",
+      "views": {
+        "overview": {
+          "title": "Profile Overview",
+          "transformation": {
+            "fields": [
+              "fullName",
+              "jobTitle",
+              "currentCompany",
+              "location",
+              "postalCode",
+              "contactInfo.email",
+              "contactInfo.phone",
+              "contactInfo.linkedinUrl",
+              "contactInfo.xingUrl",
+              "metadata.scrapedFrom",
+              "metadata.dataQuality"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "fullName": {
+                "label": "Name",
+                "format": "text"
+              },
+              "jobTitle": {
+                "label": "Job Title",
+                "format": "text"
+              },
+              "currentCompany": {
+                "label": "Company",
+                "format": "text"
+              },
+              "location": {
+                "label": "Location",
+                "format": "text"
+              },
+              "contactInfo.email": {
+                "label": "Email",
+                "format": "text"
+              },
+              "contactInfo.phone": {
+                "label": "Phone",
+                "format": "text"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
